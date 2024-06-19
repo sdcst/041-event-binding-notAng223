@@ -4,8 +4,8 @@ import tkinter as tk
 import playsound as p
 
 def playsound(event):
-    print(event)
-    p.playsound("animals_dogs_x2_barking_small_001.mp3")
+    print(event.num)
+    p.playsound("bruh_sound_effect_v1.mp3")
 
 
 win = tk.Tk()
@@ -17,6 +17,7 @@ l2 = tk.Label(win,text="This button has an event bound by a bind")
 # note that the callback for b1 is included in its definition
 # but the callback for b2 is in a separate command
 b1 =  tk.Button(win,text="Click to play",command="playsound")
+b1.bind("<Button>",playsound)
 b2 =  tk.Button(win,text="Click to play")
 b2.bind("<Button>",playsound)
 
